@@ -6,8 +6,11 @@ import './custom-button.styles.scss';
 // Import Components
 // import MenuItem from '../menu-item/menu-item.component';
 
-const CustomButton = ({ children, ...otherProps }) => (
-  <button className="custom-button" {...otherProps}>
+const CustomButton = ({ children, isGoogleSignIn, ...otherProps }) => (
+  <button
+    className={`${isGoogleSignIn ? 'google-sign-in' : ''} custom-button`}
+    {...otherProps}
+  >
     {children}
   </button>
 );
